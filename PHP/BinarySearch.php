@@ -19,6 +19,19 @@ function iterativeBinarySearch($list, $target)
     return -1;
 }   
 
+function verifyIterative($index)
+{
+    $numbers = [1,2,3,4,5,6,7,8,9,10];
+    
+    $result = iterativeBinarySearch($numbers, $index);
+    
+    if ($result != null) {
+        echo("Target found at index: " . $result);
+    } else {
+        echo("Target not found in list");
+    }
+}
+
 function binarySearch($list, $target, $start, $end) 
 {
     if ($start > $end)
@@ -29,11 +42,23 @@ function binarySearch($list, $target, $start, $end)
     if ($list[$mid] == $target) {
         return $mid;
     } elseif ($list[$mid] > $target) {
-        return binary_search($list, $target, $start, $mid-1);
+        return binarySearch($list, $target, $start, $mid-1);
     } elseif ($list[$mid] < $target) {
-        return binary_search($list, $target, $mid+1, $end);
+        return binarySearch($list, $target, $mid+1, $end);
     }
 }
 
+function verifyRecursive($index)
+{
+    $numbers = [1,2,3,4,5,6,7,8,9,10];
+    
+    $result = binarySearch($numbers, $index, 0, count($numbers) - 1);
+    
+    if ($result != null) {
+        echo("Target found at index: " . $result);
+    } else {
+        echo("Target not found in list");
+    }
+}
 
 ?>
