@@ -23,7 +23,5 @@ function verify($index)
     } else {
         echo("Target not found in list");
     }
-    
-    // verify($result);
 }
 ?>
