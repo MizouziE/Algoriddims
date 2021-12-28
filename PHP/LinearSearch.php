@@ -14,15 +14,16 @@ function linearSearch(Array $list, $key)
 
 function verify($index)
 {
-    if ($index != null) {
-        echo("Target found at index: " . $index);
+    $numbers = [1,2,3,4,5,6,7,8,9,10];
+    
+    $result = linearSearch($numbers, $index);
+    
+    if ($result != null) {
+        echo("Target found at index: " . $result);
     } else {
         echo("Target not found in list");
     }
     
-    $numbers = [1,2,3,4,5,6,7,8,9,10];
-    
-    $result = linearSearch($numbers, 12);
-    verify($result);
+    // verify($result);
 }
 ?>
