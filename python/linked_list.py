@@ -16,7 +16,9 @@ class Node:
 
 class SinglyLinkedList:
     """
-    Linear data structure that stores values in nodes. The list maintains a reference to the first node, also called head. Each node points to the next node in the list
+    Linear data structure that stores values in nodes. 
+    The list maintains a reference to the first node, also called head. 
+    Each node points to the next node in the list
 
     Attributes:
         head: The head node of the list
@@ -35,6 +37,21 @@ class SinglyLinkedList:
         """
 
         return self.head is None
+
+    def size(self):
+        """
+        Returns the number of nodes in the list
+        Takes 0(n) time
+        """
+
+        current = self.head
+        count = 0
+
+        while current:
+            count += 1
+            current = current.next_node
+
+        return count
 
     def __len__(self):
         """
@@ -201,7 +218,7 @@ class SinglyLinkedList:
         while current:
             if current is self.head:
                 nodes.append("[Head: %s]" % current.data)
-            elif current.next is None:
+            elif current.next_node is None:
                 nodes.append("[Tail: %s]" % current.data)
             else:
                 nodes.append("[%s]" % current.data)
