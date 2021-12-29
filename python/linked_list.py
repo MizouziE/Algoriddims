@@ -125,8 +125,8 @@ class SinglyLinkedList:
         Takes O(n) time
         """
 
-        if index >= self.__count:
-            raise IndexError('index out of range')
+        # if index >= self.__count:
+        #     raise IndexError('index out of range')
 
         if index == 0:
             return self.head
