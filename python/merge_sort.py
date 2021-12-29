@@ -17,7 +17,7 @@ def merge_sort(list):
 
     return merge(left, right)
 
-def split(split):
+def split(list):
     """
     Divide the unsorted list at midpoint into sublsts
     Returns two sublists - left & right
@@ -40,7 +40,7 @@ def merge(left, right):
     j = 0
 
     while i < len(left) and j < len(right):
-        if left[i] < right [j]:
+        if left[i] < right[j]:
             l.append(left[i])
             i+=1
         else:
@@ -54,5 +54,11 @@ def merge(left, right):
     while j < len(right):
         l.append(right[j])
         j+=1
+
+    return l
+
+alist = [43, 23, 76, 37, 93, 12, 32, 73]
+l = merge_sort(alist)
+print(l)
 
         
